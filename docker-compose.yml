@@ -18,6 +18,7 @@ services:
       - .env-non-dev
     depends_on:
       - db
+      - redis
     command: ["/backend/docker/app.sh"]
     ports:
       - "9000:8000"
@@ -31,6 +32,13 @@ services:
       - .env-non-dev
     depends_on:
       - db
+      - redis
     command: [ "/backend/docker/app.sh" ]
     ports:
       - "9001:8000"
+
+  redis:
+    image: redis
+    container_name: mutex
+    ports:
+      - "6379:6379"

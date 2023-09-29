@@ -1,10 +1,8 @@
-from datetime import datetime
-
-from sqlalchemy import select, insert, func
+from sqlalchemy import select, insert, func, desc
 
 from dummy_server.api.models import Message
 from dummy_server.db.base import local_session
-
+from asyncio import Lock
 
 class MessageDataAccess:
     model = Message
