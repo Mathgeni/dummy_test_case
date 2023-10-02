@@ -16,7 +16,6 @@ var/
 wheels/
 *.egg-info/
 # Environments
-.env
 env/
 venv/
 ENV/

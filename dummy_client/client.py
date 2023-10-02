@@ -39,7 +39,8 @@ async def client(urls: list[str]) -> list[dict[str, str | int | datetime]]:
 
 async def main():
     start = time()
-    urls = ['http://127.0.0.1:9000/', 'http://127.0.0.1:9001/']
+    # urls = ['http://127.0.0.1:9000/', 'http://127.0.0.1:9001/']
+    urls = ['htps://127.0.0.1:8000/']
     tasks = [asyncio.create_task(client(urls)) for _ in range(50)]
     result = await asyncio.gather(*tasks)
     process_time = time() - start
